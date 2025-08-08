@@ -1,0 +1,22 @@
+/* The basics */
+section.z-section{
+    position: relative;
+}
+section.z-section .z-thumbnail img,
+section.z-section .main-image img{
+    width: 100%;
+}
+section.z-section .z-content,
+section.z-section .z-cta{
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+section.z-section:first-of-type .z-content{
+    margin-top: 0;
+}
+
+/* Full viewer width */
+section.z-section.full-viewer-width{
+    left: calc(50% - 50vw);
+    width: 100vw;
+}

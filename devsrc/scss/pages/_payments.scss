@@ -1,0 +1,33 @@
+section#payments-header {
+    padding-bottom: 100px;
+    .container{
+        .content{
+            h1{
+                text-align: center;
+                padding-bottom: 0;
+            }
+        }
+    }
+}
+section#payments-section{
+    background: $white;
+    margin: 50px 0;
+    .container{
+        .content{
+            padding-top: 20px;
+            padding-bottom: 20px;
+            *{
+                margin: auto;
+            }
+            form{
+                max-width: 600px;
+                margin: 0 auto;
+                #text-1{
+                    label{
+                        font-weight: 600 !important;
+                    }
+                }
+            }
+        }
+    }
+}

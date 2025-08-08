@@ -1,0 +1,177 @@
+section#ask-a-question-section{
+    margin-bottom: 50px;
+    .container{
+        .content{
+            display: flex;
+            flex-direction: row;
+            input#faq_filter{
+                flex-grow: 1;
+            }
+            a{
+                white-space: nowrap;
+                margin-left: 20px;
+            }
+        }
+    }
+    @media(max-width: $md){
+        .container{
+            .content{
+                display: block;
+                input#faq_filter{
+                    margin-bottom: 20px;
+                }
+                a{
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+}
+
+section#faq-section{
+    ul#faq-questions{
+        max-width: 1200px;
+        li{
+            position: relative;
+            z-index: 10;
+            margin-bottom: 50px;
+            h3{
+                position: relative;
+                cursor: pointer;
+                padding-left: 30px;
+                &::before{
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    content: '+';
+                    color: $primary;
+                    font-weight: 700;
+                    margin-right: 5px;
+                }
+            }
+            p.answer{
+                display: none;
+                margin: 10px 0 0;
+                padding-left: 30px;
+                font-size: $font-size;
+                line-height: 1.5;
+                color: $white;
+            }
+            &.open{
+                h3::before{
+                    content: '-';
+                }
+                p.answer{
+                    display: block;
+                }
+            }
+            &.hidden{
+                display: none;
+            }
+        }
+    }
+}
+
+body#faq-body section#information-wrapper{
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    height: calc(100% + 80px);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background-color: hsla(240, 14%, 7%, .5);
+    pointer-events: none;
+    opacity: 0;
+    transition: .2s opacity linear;
+    &.active{
+        opacity: 1;
+        pointer-events: all;
+    }
+    .info{
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 80%;
+        max-width: $max-width;
+        transform: translate(-50%, -50%);
+        background-color: #29292D;
+        border: 1px solid lighten(#29292D,5%);
+        padding: 30px 40px 20px;
+        display: none;
+        b{
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 15px;
+            height: 15px;
+            cursor: pointer;
+            &::before{
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 100%;
+                height: 2px;
+                background-color: darken($white, 30%);
+                transform: translate(-50%, -50%) rotate(45deg);
+            }
+            &::after{
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 100%;
+                height: 2px;
+                background-color: darken($white, 30%);
+                transform: translate(-50%, -50%) rotate(-45deg);
+            }
+        }
+        p{
+            margin: 0 0 10px;
+        }
+        ul{
+            li{
+                position: relative;
+                padding-left: 15px;
+                padding-bottom: 20px;
+                &:before{
+                    content: '_';
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    color: $primary;
+                    font-weight: 700;
+                }
+            }
+        }
+        &.active{
+            display: block;
+        }
+    }
+    @media(min-width: $lg){
+        .info{
+            width: calc(100vw - 80px - 11vw);
+            max-width: 100vw;
+        }
+    }
+    @media(max-width: $md){
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+    }
+}
+
+/*
+    Support Template
+*/
+section#consultation-form-section{
+    iframe{
+        background-color: $white;
+        min-height: 910px;
+    }
+}

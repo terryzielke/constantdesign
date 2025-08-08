@@ -1,0 +1,20 @@
+.const-human-form form input[type="submit"].disabled,
+.const-human-form form button[type="submit"].disabled {
+  opacity: .3 !important;
+  pointer-events: none !important;
+}
+.yesNoSliderContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: sans-serif;
+  margin-bottom: 20px;
+}
+.yesNoSliderContainer label {
+  opacity: 0.3;
+    font-size: 14px;
+}
+
+.yesNoSlider {
+  max-width: 200px;
+}

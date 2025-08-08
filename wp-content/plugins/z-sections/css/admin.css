@@ -1,0 +1,492 @@
+/*
+* General Metabox and Toolbar Styles
+*/
+#z_sections_metabox .inside {
+    margin: 0;
+    padding: 0;
+}
+
+.z_toolbar_item {
+    display: block;
+    padding: 20px;
+}
+
+/*
+* Section Container Styles
+*/
+#z_sections_editor_sections section {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 30px 0 0; /* Space for the header */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Overlay for sections (e.g., when background image is present) */
+#z_sections_editor_sections section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 0;
+}
+
+/* Reset outline and box-shadow for all elements within a section */
+#z_sections_editor_sections section * {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/*
+* Section Header Styles (Handle for Sorting)
+*/
+#z_sections_editor_sections section .section-header {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: calc(100% - 10px); /* Account for padding/margins if any on parent */
+    padding: 2px 5px;
+    background: #f7f7f7;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#z_sections_editor_sections section .section-header h2 {
+    flex-grow: 1;
+    margin: 0;
+    padding: 0 5px;
+    height: 30px;
+    line-height: 30px;
+    color: #bbb;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+#z_sections_editor_sections section .section-header a {
+    cursor: pointer;
+}
+
+#z_sections_editor_sections section .section-header a span {
+    display: inline-block;
+    width: 20px;
+    height: 30px;
+    line-height: 30px;
+    margin-left: 5px;
+    color: #bbb;
+    text-decoration: none;
+    font-size: 14px;
+    text-align: center;
+}
+
+#z_sections_editor_sections section .section-header a.toggle-settings:hover span {
+    color: #6a6a6a;
+}
+
+#z_sections_editor_sections section .section-header a.section-delete:hover span {
+    color: #a00000;
+}
+
+/*
+* Section Settings Styles
+*/
+#z_sections_editor_sections section .section-settings {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 10px 0;
+    background: #f7f7f7;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Hide settings when not open */
+#z_sections_editor_sections section:not(.settings-open) .section-settings {
+    display: none !important;
+}
+
+/* Flex-grow for first two input fields */
+#z_sections_editor_sections section .section-settings .input:nth-of-type(1),
+#z_sections_editor_sections section .section-settings .input:nth-of-type(2) {
+    flex-grow: 1;
+}
+
+#z_sections_editor_sections section .section-settings .input a.select-bg-image,
+#z_sections_editor_sections section .section-settings .input a.remove-bg-image {
+    display: inline-block;
+    margin-right: 5px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#z_sections_editor_sections section .section-settings .input a.remove-bg-image {
+    color: #a00000;
+}
+
+#z_sections_editor_sections section .section-settings .input input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-top: -1px;
+}
+
+#z_sections_editor_sections section .section-settings .input input[type="checkbox"]::before {
+    margin: -1px 0 0 -2px;
+}
+
+/*
+* Global Input and Content Area Styles
+*/
+#z_sections_editor_sections section .input {
+    position: relative;
+    z-index: 1;
+    padding: 0 10px;
+}
+
+#z_sections_editor_sections section label {
+    display: block;
+    margin: 10px 0 5px;
+    font-size: 10px;
+    font-weight: bold;
+    color: #bbb;
+}
+
+#z_sections_editor_sections section input[type="text"],
+#z_sections_editor_sections section input[type="checkbox"] {
+    width: 100%;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 0;
+}
+
+#z_sections_editor_sections section input[type="checkbox"] {
+    width: 20px; /* Overridden from general input[type="checkbox"] for consistency */
+    height: 20px; /* Overridden from general input[type="checkbox"] for consistency */
+}
+
+
+#z_sections_editor_sections section .section-content {
+    padding: 0 15px;
+}
+
+/* WYSIWYG textarea - will be hidden by TinyMCE */
+#z_sections_editor_sections section textarea {
+    opacity: 0;
+}
+
+/*
+* Table/Layout Specific Styles (for single-column layouts like full-width, image-text, text-image, shortcode)
+*/
+#z_sections_editor_sections section table {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+#z_sections_editor_sections section table tbody,
+#z_sections_editor_sections section table tr {
+    width: 100%;
+}
+
+/* Direct child td of table within a section */
+#z_sections_editor_sections section > table tr td {
+    position: relative;
+    width: auto;
+}
+
+/* Image Figures (small and large) */
+#z_sections_editor_sections section figure.small-img-figure {
+    position: relative;
+    display: inline-block;
+    margin: 30px 10px 20px;
+}
+
+#z_sections_editor_sections section figure.small-img-figure img {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: none;
+}
+
+/* Hide image controls/preview when no image is selected */
+#z_sections_editor_sections section figure:not(.has-image) a.small-img-remove,
+#z_sections_editor_sections section figure:not(.has-image) a.large-img-remove,
+#z_sections_editor_sections section figure.small-img-figure:not(.has-image) img {
+    display: none;
+}
+
+#z_sections_editor_sections section figure.small-img-figure.has-image a.small-img-select {
+    display: none;
+}
+
+/* Image Remove Buttons */
+#z_sections_editor_sections section figure a.small-img-remove,
+#z_sections_editor_sections section figure a.large-img-remove {
+    position: absolute;
+    top: 0;
+    right: -20px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    color: #a00000; /* Default color for remove icons */
+}
+
+#z_sections_editor_sections section figure a span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: #ddd; /* Default color for dashicons within figure links */
+}
+
+#z_sections_editor_sections section figure a:hover span {
+    color: #a00000; /* Hover color for dashicons within figure links */
+}
+
+
+/* CTA Button Styles */
+#z_sections_editor_sections section .add-cta-button,
+#z_sections_editor_sections section figure.small-img-figure a.small-img-select {
+    display: inline-block;
+    min-width: 100px;
+    padding: 3px 9px;
+    background: #fff;
+    border: 1px solid #ddd;
+    color: #6a6a6a;
+    cursor: pointer;
+}
+
+#z_sections_editor_sections section .add-cta-button {
+    margin-left: 10px;
+}
+
+#z_sections_editor_sections section .add-cta-button:hover,
+#z_sections_editor_sections section figure.small-img-figure a.small-img-select:hover {
+    color: #2271b1;
+}
+
+#z_sections_editor_sections section .cta-button {
+    margin-bottom: 30px;
+}
+
+/* Hide CTA button fields by default and hide button in alt state */
+#z_sections_editor_sections section .cta-button:not(.show-button) .input,
+#z_sections_editor_sections section .cta-button.has-button .add-cta-button,
+#z_sections_editor_sections section .cta-button.show-button .add-cta-button {
+    display: none;
+}
+
+/* Show CTA button fields when 'has-button' or 'show-button' class is present */
+#z_sections_editor_sections section .cta-button.has-button .input,
+#z_sections_editor_sections section .cta-button.show-button .input {
+    display: block !important;
+}
+
+
+/*
+* Columns Section Specific Styles
+*/
+#z_sections_editor_sections .columns-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows columns to wrap to the next line */
+}
+
+#z_sections_editor_sections .columns-container .section-column {
+    position: relative;
+    flex-basis: 1; /* Initial flex-basis to allow shrinking */
+    flex-grow: 1; /* Allows columns to grow to fill space */
+    width: 33%;
+    min-width: 300px; /* Minimum width before wrapping */
+    padding: 0;
+}
+
+/* Column Delete Button */
+#z_sections_editor_sections .columns-container .section-column .column-delete {
+    position: absolute;
+    top: 30px; /* Position relative to the column */
+    right: 5px;
+    z-index: 2; /* Above other column content */
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    font-size: 14px;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    background-color: #f0f0f0; /* Added for better visibility */
+}
+
+#z_sections_editor_sections .columns-container .section-column .column-delete span.dashicons-no {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    font-size: 14px;
+    color: #ddd; /* Default color */
+}
+
+#z_sections_editor_sections .columns-container .section-column .column-delete:hover span.dashicons-no {
+    color: #a00000; /* Hover color */
+}
+
+/* Add Column Button Container */
+#z_sections_editor_sections .column-actions {
+    padding: 20px 5px;
+}
+
+#z_sections_editor_sections .column-actions .button.add-column {
+    position: relative;
+    z-index: 10;
+}
+
+
+/*
+* Image and Text Section Specific Styles (text-image, image-text)
+*/
+#z_sections_editor_sections section.text-image table tr td,
+#z_sections_editor_sections section.image-text table tr td {
+    width: 50%;
+}
+
+#z_sections_editor_sections section figure.large-img-figure {
+    position: relative;
+    width: 70%; /* Relative to TD */
+    aspect-ratio: 1/1; /* Makes it square */
+    margin: 15%; /* Centers it within the TD */
+    background-color: #6a6a6a;
+    background-image: url('../assets/img/icon-image.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+    border: none;
+    transition: background-color .2s linear;
+}
+
+#z_sections_editor_sections section figure.large-img-figure:hover {
+    background-color: #8a8a8a;
+}
+
+#z_sections_editor_sections section figure.large-img-figure img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: none;
+    cursor: pointer;
+}
+
+/*
+* Shortcode Section Specific Styles
+*/
+#z_sections_editor_sections section input.shortcode {
+    margin-bottom: 15px;
+}
+
+
+/*
+* TinyMCE Editor Integration Styles
+*/
+#z_sections_editor_sections section .mce-tinymce.mce-panel {
+    width: calc(100% - 10px) !important; /* Account for padding */
+    margin-bottom: 10px;
+    padding: 0 5px;
+    box-shadow: none;
+    background: transparent;
+}
+
+#z_sections_editor_sections section .mce-tinymce.mce-panel .mce-top-part,
+#z_sections_editor_sections section .mce-tinymce.mce-panel .mce-top-part::before {
+    box-shadow: none;
+}
+
+#z_sections_editor_sections section .mce-tinymce.mce-panel .mce-edit-area {
+    background: transparent;
+    padding: 0 5px;
+}
+
+#z_sections_editor_sections section .mce-tinymce.mce-panel .mce-edit-area iframe {
+    width: 99.99% !important; /* Tiny adjustment to prevent horizontal scrollbar issues */
+    min-height: 300px;
+    border: 1px solid #ddd;
+}
+
+#z_sections_editor_sections section .mce-container .mce-container-body .mce-statusbar,
+#z_sections_editor_sections section .mce-container div.mce-toolbar-grp {
+    background: transparent;
+    border-bottom: none;
+    border-width: 0 !important;
+}
+
+
+/*
+* Add Section Toolbar Styles
+*/
+ul#z_section_list {
+    display: flex;
+    flex-wrap: nowrap; /* Prevents wrapping, might need adjustment for small screens */
+    list-style: none;
+    margin: 20px 0 0;
+    padding: 0;
+}
+
+ul#z_section_list:not(.show) {
+    display: none;
+}
+
+ul#z_section_list li {
+    position: relative;
+    display: inline-block;
+    width: 100px;
+    margin-right: 20px;
+}
+
+ul#z_section_list li figure.z_section_item {
+    display: block;
+    width: 100px;
+    margin: 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+ul#z_section_list li figure.z_section_item img {
+    display: block;
+    width: 100px;
+    height: 100px;
+}
+
+ul#z_section_list li figure.z_section_item figcaption {
+    position: absolute;
+    bottom: -25px; /* Position below the image */
+    left: 0;
+    width: 100px;
+    padding: 5px 0;
+    text-align: center;
+    color: #2271b1;
+    display: none; /* Hidden by default */
+}
+
+ul#z_section_list li figure.z_section_item:hover {
+    border-color: #2271b1;
+}
+
+ul#z_section_list li figure.z_section_item:hover figcaption {
+    display: block;
+}

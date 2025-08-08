@@ -1,0 +1,99 @@
+#login{
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%,-50%);
+	-moz-transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+	width: 100%;
+	max-width: 300px;
+	padding: 120px 0 0;
+}
+#login h1,
+.forgetmenot{
+	display: none !important;
+}
+#login form{
+	box-shadow: none !important;
+	border: none !important;
+}
+#login form input[type="text"],
+#login form input[type="password"],
+#login form input#wp-submit{
+	box-shadow: none !important;
+	outline: none !important;
+	border: none !important;
+	border: none !important;
+	text-shadow: none !important;
+	box-shadow: none !important;
+	border-radius: 2px;
+	height: 40px;
+	width: 100%;
+}
+#login #backtoblog,
+#login #backtoblog a{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100px;
+	padding: 0 !important;
+	background-size: contain;
+	color: transparent !important;
+	font-size: 0px !important;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+
+/*
+	LOGO
+*/
+#login #backtoblog{
+	background: url(../assets/img/const-logo.svg) no-repeat center;
+	background-size: 250px;
+	background-position: center;
+	padding: 24px;
+}
+/*
+	COLORS
+*/
+body.login{
+	background: #101015 !important;
+}
+#login form{
+	background-color: transparent;
+}
+#login label{
+	color: dark !important;
+}
+#login form input#user_login,
+#login form input#user_pass{
+	background: transparent !important;
+	border: 1px solid white !important;
+	color: white !important;
+	border-radius: 0 !important;
+	font-size: 16px !important;
+	font-weight: 100 !important;
+}
+#login form input#wp-submit{
+	background: #101015 !important;
+	border: 1px solid #9946FF !important;
+	color: #9946FF !important;
+	border-radius: 0 !important;
+}
+#login form input#wp-submit:hover,
+#login form input#wp-submit:focus{
+	border: 1px solid #FFD644 !important;
+	color: #FFD644 !important;
+}
+#login a,
+#login a:visited{
+	color: dark !important;
+}
+#login a:hover,
+#login a:focus{
+	color: #FFD644 !important;
+}

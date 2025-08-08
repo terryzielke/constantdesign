@@ -1,0 +1,29 @@
+
+//Setup
+@import 'vendor/bootstrap';
+@import 'utility/mixins';
+@import 'utility/reset';
+@import 'utility/variables';
+
+//Components
+@import 'components/body';
+@import 'components/blog';
+@import 'components/header';
+@import 'components/footer';
+@import 'components/text';
+@import 'components/button';
+@import 'components/form';
+
+//Pages and Posts
+@import 'pages/frontpage';
+@import 'pages/contact';
+@import 'pages/services';
+@import 'pages/projects';
+@import 'pages/payments';
+@import 'pages/faq';
+@import 'pages/404';
+
+//Modules
+@import 'modules/forminator';
+@import 'modules/slider.scss';
+@import 'modules/sections.scss';
