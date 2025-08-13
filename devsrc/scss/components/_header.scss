@@ -118,23 +118,23 @@ html{
 				top: 20px;
 				left: 40px;
 				svg{
-					width: 80px;
-					height: auto;
+					width: auto;
+					height: 26px;
 					fill: $primary;
 				}
 				#header-logo-text{
 					position: absolute;
 					top: -3.5px;
-					left: 80px;
+					left: 110px;
 					width: 200px;
-					color: $light;
+					color: lighten($medium, 10%);
 					font-family: $subheader;
 					font-size: 27px;
-					font-weight: 100;
+					font-weight: 100 !important;
 					text-decoration: none;
 					#typing-text,
 					.static-text{
-						margin-left: .3em;
+						margin-left: .2em;
 					}
 				}
 			}
@@ -177,7 +177,7 @@ html{
 		}
 		@media(max-width: $md){
 			button#menu-button{
-				right: 20px;
+				right: 10px;
 				padding-left: 0;
 				span{
 					display: none;
@@ -199,11 +199,23 @@ html{
 				}
 			}
 			header#header{
-				#header-logo{
+				a#header-logo{
 					left: 20px !important;
+					width: 30px !important;
+					overflow: hidden;
+					svg{
+						.word{
+							display: none;
+						}
+					}
 					#header-logo-text{
 						display: none;
 					}
+				}
+			}
+			&:not(.scrolling){
+				button#menu-button{
+					right: 10px;
 				}
 			}
 		}

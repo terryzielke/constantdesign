@@ -63,9 +63,9 @@ add_filter('theme_page_templates', function($templates) {
     $templates['php/templates/pages/contact-template.php'] = 'Contact';
     $templates['php/templates/pages/services-template.php'] = 'Services';
     $templates['php/templates/pages/projects-template.php'] = 'Projects';
-    $templates['php/templates/pages/faq-template.php'] = 'FAQ';
     $templates['php/templates/pages/support-template.php'] = 'Support';
-    $templates['php/templates/pages/payments-template.php'] = 'Payments';
+    $templates['php/templates/pages/faq-template.php'] = 'FAQ';
+    $templates['php/templates/pages/referrals-template.php'] = 'Landing Page - Referrals';
     return $templates;
 });
 add_filter('template_include', function($template) {

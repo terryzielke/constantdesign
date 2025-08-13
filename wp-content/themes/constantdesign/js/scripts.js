@@ -98,6 +98,20 @@ jQuery(document).ready(function($){
             $button.text('Never Mind');
         }
     });
+    
+    
+    // Handle the visibility of the referrer fields
+    $(document).ready(function() {
+	    const $button = $('input[name="referrals"][value="Referral"]');
+        const $section = $('#contact-section');
+		$('input[name="referrals"]').on('change', function() {
+			if ($button.is(':checked')) {
+				$section.addClass('referred');
+			} else {
+				$section.removeClass('referred');
+			}
+		});
+	});
 
 
     // Handle the FAQ accordion functionality

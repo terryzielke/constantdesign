@@ -62,30 +62,16 @@ section#contact-section{
             text-align: right;
         }
         a.question{
-            position: absolute;
+            position: relative;
             display: inline-block;
             width: 16px;
             height: 16px;
             cursor: pointer;
-            top: 5px;
-            left: -25px;
+            top: -1px;
+            margin: 0 0 0 5px;
             svg{
                 width: 100%;
                 fill: darken($white, 50%);
-            }
-            &.header-question{
-                position: relative;
-                display: inline-block;
-                width: 16px;
-                height: 16px;
-                margin-left: 5px;
-                left: auto;
-                cursor: pointer;
-                top: -1px;
-                svg{
-                    width: 100%;
-                    fill: $light;
-                }
             }
             &:hover{
                 svg{
@@ -107,12 +93,15 @@ section#contact-section{
                     margin-bottom: 20px;
                     label{
                         position: relative;
-                        display: inline-block;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
                         padding-left: 40px;
-                        padding-top: .5em;
+                        height: 30px;
                         line-height: 1em;
                         color: darken($white, 50%);
-                        input[type="checkbox"]{
+                        input[type="checkbox"],
+                        input[type="radio"]{
                             display: none;
                         }
                         .checkbox{
@@ -137,6 +126,33 @@ section#contact-section{
                             }
                         }
                         input[type="checkbox"]:checked + .checkbox {
+                            border-color: $primary;
+                            &::after {
+                                background-color: $primary;
+                            }
+                        }
+                        .radio{
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            height: 30px;
+                            width: 30px;
+                            background-color: $dark;
+                            border: 1px solid darken($white, 30%);
+                            border-radius: 1000px;
+                            &::after{
+                                content: '';
+                                position: absolute;
+                                left: 10px;
+                                top: 10px;
+                                width: 8px;
+                                height: 8px;
+                                border-radius: 1000px;
+                                background-color: transparent;
+                                transition: all .2s linear;
+                            }
+                        }
+                        input[type="radio"]:checked + .radio {
                             border-color: $primary;
                             &::after {
                                 background-color: $primary;
@@ -169,6 +185,13 @@ section#contact-section{
                 }
             }
         }
+    }
+    &:not(.referred){
+	    form{
+		    #referral-only{
+			    display: none;
+		    }
+	    }
     }
     @media(min-width: $lg){
         .content{
@@ -230,7 +253,7 @@ section#contact-section{
     }
 }
 
-body#contact-body section#information-wrapper{
+body section#information-wrapper{
     position: fixed;
     z-index: 100;
     top: 0;

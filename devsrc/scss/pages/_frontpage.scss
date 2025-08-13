@@ -257,13 +257,58 @@ section.split-links-section{
                         background-color: $dark !important;
                         color: $primary !important;
                         &:hover{
-                            background-color: $primary !important;
+                            background-color: lighten($primary, 5%) !important;
                             color: $dark !important;
                         }
                     }
                 }
             }
         }
+    }
+    &.yellow{
+	    table{
+		    tr{
+			    td{
+	                &:nth-child(1){
+	                    a{
+	                        background-color: $secondary !important;
+	                        color: $dark !important;
+	                    }
+	                }
+	                &:nth-child(2){
+	                    a{
+	                        background-color: $dark !important;
+	                        color: $secondary !important;
+	                    }
+				    }
+			    }
+		    }
+	        &:hover{
+	            tr{
+	                td{
+	                    a{
+	                        background-color: $dark !important;
+	                        color: $secondary !important;
+	                        &:hover{
+	                            background-color: lighten($secondary, 5%) !important;
+	                            color: $dark !important;
+	                        }
+	                    }
+	                }
+	            }
+	        }
+	    }
+    }
+    &.darken{
+	    table{
+		    tr{
+			    td{
+				    a:not(:hover){
+					    opacity: .9;
+				    }
+			    }
+		    }
+	    }
     }
     @media(max-width: $md){
         table{
@@ -300,6 +345,45 @@ section.split-links-section{
             }
         }
     }
+}
+
+section#referral-cta-section{
+	background-color: $secondary;
+    padding: 100px 0;
+    border-bottom: 2px solid $dark;
+	.container{
+		.content{
+			.row{
+				.col{
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					*{
+						color: $dark;
+					}
+					&:last-child{
+						text-align: center;
+					}
+					.big-number{
+						font-family: $subheader;
+						font-size: clamp(150px, 13vw, 250px);
+						color: $dark;
+					}
+					@media(max-width: $md){
+						text-align: center;
+						.big-number{
+							padding-top: 50px;
+						}
+					}
+					@media(max-width: $sm){
+						.big-number{
+							font-size: 100px;
+						}
+					}
+				}
+			}
+		}
+	}
 }
 
 section#build-something-great-section{

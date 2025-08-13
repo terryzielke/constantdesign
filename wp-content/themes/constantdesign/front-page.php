@@ -110,11 +110,27 @@
 	</div>
 </section>
 
+<section id="referral-cta-section">
+	<div class="container">
+		<div class="content">
+			<div class="row gx-5">
+				<div class="col col-12 col-md-6">
+					<h2>Referral Discount Program.</h2>
+					<h3>Rewarding you for helping us create something new.</h3>
+				</div>
+				<div class="col col-12 col-md-6">
+					<span class="big-number">15%</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
 <section class="split-links-section">
 	<table>
 		<tr>
 			<td>
-				<a href="/projects">See Our Work</a>
+				<a href="/referrals">Learn More_</a>
 			</td>
 		</tr>
 	</table>

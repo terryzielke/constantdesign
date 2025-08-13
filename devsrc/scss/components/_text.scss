@@ -7,6 +7,10 @@ main#main{
 	font-weight: 200;
 	color: $light;
 	letter-spacing: .03em;
+	
+	.yellow{
+		color: $secondary;
+	}
 		
 	a{
 		text-decoration: none !important;
@@ -97,9 +101,9 @@ main#main{
 		}
 	}
 	.success-message{
-		color: $blue;
+		color: $green;
 		*{
-			color: $blue;
+			color: $green;
 		}
 	}
 	.error-message{
