@@ -2,6 +2,7 @@ html{
 	body{
 		background-color: $dark;
 		width: 100%;
+		max-width:100vw;
 		overflow-x: hidden;
 		*{
 			outline: none !important;
@@ -9,6 +10,10 @@ html{
 		#thetop{
 			position: absolute;
 			top: 0;
+		}
+		#page{
+			position: relative;
+			overflow: hidden;
 		}
 		.container{
 			position: relative;
