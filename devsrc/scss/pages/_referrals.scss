@@ -102,8 +102,10 @@ section#referral-introduction-section{
             .content{
                 .row{
                     .col{
+	                    min-height: 100vw;
+	                    height: 180vw;
                         .introduction{
-                            padding-top: 100px;
+                            padding-top: 0;
                             h1{
                                 span{
                                     display: block;
@@ -160,6 +162,9 @@ section#referral-description-section{
 			}
 		}
 	}
+    @media(max-width: $md){
+	    padding: 50px 0;
+    }
 }
 
 section#referral-how-it-works{
@@ -234,6 +239,7 @@ section#why-refer-constant-design-section{
         }
     }
     @media(max-width: $md){
+	    padding: 50px 0;
         .row{
             .col{
                 ul{
@@ -292,4 +298,7 @@ section#referral-program-rules-section{
 			}
 		}
 	}
+    @media(max-width: $md){
+	    padding: 50px 0;
+    }
 }

@@ -156,6 +156,7 @@ footer#footer{
 				display: block;
 				.col{
 					&.footer-logo{
+						padding-top: 0;
 						a#footer-logo{
 							#header-logo-text{
 								display: none;
